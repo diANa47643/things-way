@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Things Way - Empresa de Filtros de Belleza</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9c5d1;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    header {
+        background-color: #ff8c94;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    nav {
+        background-color: #ffbfd9;
+        padding: 10px;
+        text-align: center;
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 10px;
+    }
+    section {
+        padding: 20px;
+        margin-top: 10px;
+        display: none;
+    }
+    section h2 {
+        color: #ff8c94;
+    }
+    section p {
+        color: #333;
+    }
+    .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .service {
+        background-color: #ffbfd9;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .service i {
+        color: #ff8c94;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .cta {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .cta a {
+        display: inline-block;
+        background-color: #ff8c94;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Things Way</h1>
+            <p>Empresa de Filtros de Belleza</p>
+        </header>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#telefono">Teléfono</a>
+            <a href="#quienes-somos">Quiénes Somos</a>
+        </nav>
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <div class="services">
+                <div class="service">
+                    <i class="fas fa-makeup-brush"></i>
+                    <h3>Filtros de Maquillaje</h3>
+                    <p>Descubre una variedad de filtros de maquillaje para resaltar tu belleza de forma virtual.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-palette"></i>
+                    <h3>Filtros de Estilo</h3>
+                    <p>Explora filtros de estilo para experimentar con diferentes looks y tendencias de moda.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-paint-roller"></i>
+                    <h3>Filtros de Colorimetría</h3>
+                    <p>Encuentra filtros que te ayudarán a descubrir qué colores te favorecen más según tu tono de piel.</p>
+                </div>
+            </div>
+        </section>
+        <section id="inicio">
+            <h2>Inicio</h2>
+            <p>Bienvenido a Things Way, tu destino para explorar la belleza a través de filtros virtuales.</p>
+        </section>
+        <section id="telefono">
+            <h2>Teléfono</h2>
+            <p>Contáctanos en el 5618680312 para descubrir cómo podemos realzar tu belleza con nuestros filtros. ¡Te esperamos!</p>
+        </section>
+        <section id="quienes-somos">
+            <h2>Quiénes Somos</h2>
+            <p>Somos una empresa apasionada por ayudarte a descubrir tu mejor versión a través de filtros de belleza innovadores. ¡Únete a nuestra comunidad!</p>
+        </section>
+        <div class="cta">
+            <a href="#tips-belleza" id="ver-tips">Descubre Tips de Belleza</a>
+        </div>
+        <section id="tips-belleza" style="display: none;">
+            <h2>Tips de Belleza</h2>
+            <p>Aquí encontrarás consejos y trucos de belleza para realzar tu estilo y resaltar tu belleza natural. ¡Mantente radiante!</p>
+        </section>
+            <div class="container">
+                <h1>Things Way</h1>
+                <form action="submit_form.php" method="post">
+        
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre"><br>
+        
+                    <label for="edad">Edad:</label><br>
+                    <input type="number" id="edad" name="edad"><br>
+        
+                    <label for="correo">Correo:</label><br>
+                    <input type="email" id="correo" name="correo"><br>
+        
+                    <label for="telefono">Telefono:</label><br>
+                    <input type="phone" id="phone" name="telefono"><br>
+        
+                    <button type="submit">ENVIAR</button>
+                </form>
+                <p>Completa la información para darte mejores consejos y no olvides siempre ser bonita. Para más información contáctanos al 4717373734.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                const targetId = this.getAttribute('href').slice(1);
+                document.getElementById(targetId).style.display = 'block';
+            });
+        });
+
+        document.getElementById('ver-tips').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('tips-belleza').style.display = 'block';
+        });
+    
+    </script>
+
+    <title>Formulario Things Way</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%; /* Ajustar el ancho del contenedor */
+            max-width: 400px; /* Establecer un ancho máximo para el contenedor */
+            padding: 20px;
+            background-color: #f9c5d1;
+            border: 4px solid #f48fb1;
+            border-radius: 20px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Centrar el contenido del contenedor */
+            margin-top: 20px; /* Añadir espacio en la parte superior */
+        }
+
+        input[type=text], input[type=email], input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid #f48fb1;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff007f;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #e60073;
+        }
+
+        h1 {
+            color: #ff007f;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #333;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .phone {
+            color: #007bff;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
